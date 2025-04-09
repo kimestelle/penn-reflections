@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Alumni_Sans_Pinstripe, Merriweather } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/NavBar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const alumniSans = Alumni_Sans_Pinstripe({
   subsets: ["latin"],
+  variable: "--font-alumni-sans",
+  display: "swap",
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const merriweather = Merriweather({
   subsets: ["latin"],
+  variable: "--font-merriweather",
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -25,8 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${alumniSans.variable} ${merriweather.variable} antialiased`}
       >
+        <Navbar/>
         {children}
       </body>
     </html>
